@@ -21,9 +21,10 @@ struct ContentView: View {
     var time = Timer()
 //    @State var title: String = "Example"
 //    @State var textField: String = ""
-//    @State var toggle: Bool = false
+    @State var toggle: Bool = false
     @State var text: String = "Default Title"
     @State var textFieldInputs: String = ""
+    
     
     var body: some View {
         VStack {
@@ -151,16 +152,29 @@ struct ContentView: View {
             //Binding
             
             
-            HeaderView(title: text, text: $textFieldInputs)
+//            HeaderView(title: text, text: $textFieldInputs)
+//            
+//            Button {
+//                text = textFieldInputs
+//                textFieldInputs = ""
+//            } label: {
+//                Text("Change Title")
+//            }
             
-            Button {
-                text = textFieldInputs
-                textFieldInputs = ""
-            } label: {
-                Text("Change Title")
+            //Wrapped Values = This property returns the value manged by @binding property
+            //ProjectedValues = This property is returns the structure of type binding that created the bidrectional binding with the view
+            
+            VStack {
+                Text(text)
+                    .background(toggle ? Color.red : Color.clear)
+                    .padding()
+                Button("Press") {
+                    toggleBackgroundColor()
+                }
             }
-            
         }
+        
+        
 //        .safeAreaInset(edge: .bottom) {
 //            HStack{
 //                Spacer()
@@ -173,6 +187,10 @@ struct ContentView: View {
         
     
        
+    }
+    
+    func toggleBackgroundColor() {
+        toggle.toggle()
     }
 }
 
