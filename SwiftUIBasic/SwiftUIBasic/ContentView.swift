@@ -19,7 +19,10 @@ import SwiftUI
 struct ContentView: View {
     var date = Date()
     var time = Timer()
-    @State var title: String = "Title"
+//    @State var title: String = "Example"
+//    @State var textField: String = ""
+    @State var toggle: Bool = false
+    @State var text: String = "Default Value"
     
     var body: some View {
         VStack {
@@ -117,16 +120,33 @@ struct ContentView: View {
 //                }
 //            }
     
-            VStack {
-                Text(title)
-                Button {
-                    title = "Changed title"
-                } label: {
-                    Text("Change title")
-                }
-            }
+//            VStack {
+//                Text(title)
+//                TextField("Enter", text: $textField)
+//                    .padding()
+//                Button {
+//                    title = textField
+//                } label: {
+//                    Text("Change title")
+//                }
+//            }
             
-           
+            
+           //Toggle
+//            VStack{
+//                Text(text)
+//                Button {
+//                    toggle.toggle()
+//                    text = toggle ? "On" : "Off"
+//                } label: {
+//                    Text("ToggleButton")
+//                }
+//            }
+            
+            //Bi directional Binding
+            //$ is used for bi-directional binding
+            
+            
             
         }
 //        .safeAreaInset(edge: .bottom) {
