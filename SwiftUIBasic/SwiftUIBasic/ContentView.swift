@@ -21,8 +21,9 @@ struct ContentView: View {
     var time = Timer()
 //    @State var title: String = "Example"
 //    @State var textField: String = ""
-    @State var toggle: Bool = false
-    @State var text: String = "Default Value"
+//    @State var toggle: Bool = false
+    @State var text: String = "Default Title"
+    @State var textFieldInputs: String = ""
     
     var body: some View {
         VStack {
@@ -147,6 +148,17 @@ struct ContentView: View {
             //$ is used for bi-directional binding
             
             
+            //Binding
+            
+            
+            HeaderView(title: text, text: $textFieldInputs)
+            
+            Button {
+                text = textFieldInputs
+                textFieldInputs = ""
+            } label: {
+                Text("Change Title")
+            }
             
         }
 //        .safeAreaInset(edge: .bottom) {
@@ -161,6 +173,23 @@ struct ContentView: View {
         
     
        
+    }
+}
+
+struct HeaderView: View {
+    
+    var title: String = ""
+    @Binding var text: String
+    
+    var body: some View {
+        VStack {
+            Text(title)
+                .padding()
+            TextField("Enter Something!", text: $text)
+                .textFieldStyle(.roundedBorder)
+                .padding()
+
+        }
     }
 }
 
