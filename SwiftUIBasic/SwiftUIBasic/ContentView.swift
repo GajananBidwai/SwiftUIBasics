@@ -54,6 +54,12 @@ struct ContentView: View {
                 .padding(EdgeInsets(top: 12, leading: 0, bottom: 5, trailing: 0))
                 .shadow(radius: 2, x: 2, y: 2)
                 
+            Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia")
+                .padding()
+                .multilineTextAlignment(.leading)
+                .lineSpacing(5)
+                .lineLimit(4)
+                .textSelection(.enabled)
             
 //            Text("\(date)")
 //         //   Text(date, style: .timer)
