@@ -43,6 +43,8 @@ struct ContentView: View {
             Text("Check Font")
                 .font(Font.custom("ChristmasMarketRegular", fixedSize: 100))
                 
+//            Nested Text
+            Text("Hello \(Text("World").underline().font(.title))").font(.title)
             
 //            Text("\(date)")
 //         //   Text(date, style: .timer)
