@@ -64,6 +64,22 @@ struct ContentView: View {
 //            Color: Color is given from the asset folder in both normal and dark mode of appearance
             Color("MyColor")
                 .frame(width: 200, height: 100, alignment: .center)
+            
+            Text("Hello")
+                .font(.largeTitle)
+                .padding(10)
+                .background(Color.gray)
+            
+            HStack {
+                Image(.sample)
+                    .resizable()
+                    .scaledToFit()
+                Image(.sample)
+                    .resizable()
+                    .scaledToFill()
+            }
+            
+               
                 
             
 //            Text("\(date)")
