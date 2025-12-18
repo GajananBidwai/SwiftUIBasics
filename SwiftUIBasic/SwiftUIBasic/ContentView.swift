@@ -46,6 +46,15 @@ struct ContentView: View {
 //            Nested Text
             Text("Hello \(Text("World").underline().font(.title))").font(.title)
             
+//            All the modifers at one text view
+            Text("Hello World")
+                .font(.title)
+                .underline()
+                .fontWeight(.heavy)
+                .padding(EdgeInsets(top: 12, leading: 0, bottom: 5, trailing: 0))
+                .shadow(radius: 2, x: 2, y: 2)
+                
+            
 //            Text("\(date)")
 //         //   Text(date, style: .timer)
 //
