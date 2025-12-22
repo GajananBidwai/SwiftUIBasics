@@ -150,26 +150,30 @@ struct ContentView: View {
 //            }
             
            //Alignment guide
-            HStack(alignment: .alignComputer, spacing: 10){
-                Image(.sample)
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .alignmentGuide(VerticalAlignment.center) { dimention in
-                        return dimention[VerticalAlignment.center] + 18
-                    }
-                Image(.sample)
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .alignmentGuide(VerticalAlignment.center) { dimention in
-                        return dimention[VerticalAlignment.center] + 36
-                    }
-                Image(.sample)
-                    .resizable()
-                    .frame(width: 100, height: 100, alignment: .center)
-                    .alignmentGuide(VerticalAlignment.center) { dimention in
-                        return dimention[VerticalAlignment.center] + 54
-                    }
-            }
+//            HStack(alignment: .alignComputer, spacing: 10){
+//                Image(.sample)
+//                    .resizable()
+//                    .frame(width: 100, height: 100, alignment: .center)
+//                    .alignmentGuide(VerticalAlignment.center) { dimention in
+//                        return dimention[VerticalAlignment.center] + 18
+//                    }
+//                Image(.sample)
+//                    .resizable()
+//                    .frame(width: 100, height: 100, alignment: .center)
+//                    .alignmentGuide(VerticalAlignment.center) { dimention in
+//                        return dimention[VerticalAlignment.center] + 36
+//                    }
+//                Image(.sample)
+//                    .resizable()
+//                    .frame(width: 100, height: 100, alignment: .center)
+//                    .alignmentGuide(VerticalAlignment.center) { dimention in
+//                        return dimention[VerticalAlignment.center] + 54
+//                    }
+//            }
+            
+            getView()
+            
+            
             
 //            Grid{
 //                Group{
@@ -267,6 +271,18 @@ struct ContentView: View {
     
     func toggleBackgroundColor() {
         toggle.toggle()
+    }
+    
+    func getView() -> AnyView {
+        var isValid: Bool = true
+        var myView: AnyView!
+        
+        if isValid {
+            myView = AnyView(Text("Hello Worldddddd"))
+        } else {
+            myView = AnyView(Image(systemName: "keyboard"))
+        }
+        return myView
     }
 }
 
