@@ -25,6 +25,7 @@ struct ContentView: View {
     @State var text: String = "Default Title"
     @State var textFieldInputs: String = ""
     @ScaledMetric var customSize: CGFloat = 100
+    @Environment(\.colorScheme) private var mode
     
     var currency = 30.8989
     
@@ -171,9 +172,15 @@ struct ContentView: View {
 //                    }
 //            }
             
-            getView()
+//            Any Views
+//            getView()
             
-            
+//            Environment
+            Image(systemName: "trash")
+                .resizable()
+                .frame(width: 50, height: 50, alignment: .center)
+                .foregroundStyle(mode == .dark ? .white : .black)
+                .symbolVariant(mode == .dark ? .circle : .fill)
             
 //            Grid{
 //                Group{
