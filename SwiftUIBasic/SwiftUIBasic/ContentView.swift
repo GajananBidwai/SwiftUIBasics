@@ -24,6 +24,7 @@ struct ContentView: View {
     @State var toggle: Bool = false
     @State var text: String = "Default Title"
     @State var textFieldInputs: String = ""
+    @ScaledMetric var customSize: CGFloat = 100
     
     var currency = 30.8989
     
@@ -47,39 +48,52 @@ struct ContentView: View {
             Text("Hello \(Text("World").underline().font(.title))").font(.title)
             
 //            All the modifers at one text view
-            Text("Hello World")
-                .font(.title)
-                .underline()
-                .fontWeight(.heavy)
-                .padding(EdgeInsets(top: 12, leading: 0, bottom: 5, trailing: 0))
-                .shadow(radius: 2, x: 2, y: 2)
+//            Text("Hello World")
+//                .font(.title)
+//                .underline()
+//                .fontWeight(.heavy)
+//                .padding(EdgeInsets(top: 12, leading: 0, bottom: 5, trailing: 0))
+//                .shadow(radius: 2, x: 2, y: 2)
                 
-            Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia")
-                .padding()
-                .multilineTextAlignment(.leading)
-                .lineSpacing(5)
-                .lineLimit(4)
-                .textSelection(.enabled)
+//            Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia")
+//                .padding()
+//                .multilineTextAlignment(.leading)
+//                .lineSpacing(5)
+//                .lineLimit(4)
+//                .textSelection(.enabled)
             
 //            Color: Color is given from the asset folder in both normal and dark mode of appearance
-            Color("MyColor")
-                .frame(width: 200, height: 100, alignment: .center)
+//            Color("MyColor")
+//                .frame(width: 200, height: 100, alignment: .center)
+//            
+//            Text("Hello")
+//                .font(.largeTitle)
+//                .padding(10)
+//                .background(Color.gray)
             
-            Text("Hello")
-                .font(.largeTitle)
-                .padding(10)
-                .background(Color.gray)
+//            HStack {
+//                Image(.sample)
+//                    .resizable()
+//                    .scaledToFit()
+//                Image(.sample)
+//                    .resizable()
+//                    .scaledToFill()
+//            }
             
-            HStack {
-                Image(.sample)
-                    .resizable()
-                    .scaledToFit()
-                Image(.sample)
-                    .resizable()
-                    .scaledToFill()
-            }
+//            Image(.sample)
+//                .frame(width: customSize, height: customSize)
+                
             
-               
+//            Priority
+//            HStack {
+//                Text("Hello")
+//                    
+//                Text("Hello Hello")
+//                    
+//                Text("World, World, World, World, World, World")
+//                    
+//            }
+            
                 
             
 //            Text("\(date)")
@@ -136,20 +150,26 @@ struct ContentView: View {
 //            }
             
            //Alignment guide
-//            HStack(alignment: .alignComputer, spacing: 10){
-//                Image("testImage")
-//                    .resizable()
-//                    .frame(width: 100, height: 100, alignment: .center)
-//                    .alignmentGuide(VerticalAlignment.center) { dimention in
-//                        return dimention[VerticalAlignment.center] + 18
-//                    }
-//                Image("testImage")
-//                    .resizable()
-//                    .frame(width: 100, height: 100, alignment: .center)
-//                Image("testImage")
-//                    .resizable()
-//                    .frame(width: 100, height: 100, alignment: .center)
-//            }
+            HStack(alignment: .alignComputer, spacing: 10){
+                Image(.sample)
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .alignmentGuide(VerticalAlignment.center) { dimention in
+                        return dimention[VerticalAlignment.center] + 18
+                    }
+                Image(.sample)
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .alignmentGuide(VerticalAlignment.center) { dimention in
+                        return dimention[VerticalAlignment.center] + 36
+                    }
+                Image(.sample)
+                    .resizable()
+                    .frame(width: 100, height: 100, alignment: .center)
+                    .alignmentGuide(VerticalAlignment.center) { dimention in
+                        return dimention[VerticalAlignment.center] + 54
+                    }
+            }
             
 //            Grid{
 //                Group{
@@ -230,7 +250,6 @@ struct ContentView: View {
             
             
         }
-        
         
 //        .safeAreaInset(edge: .bottom) {
 //            HStack{
