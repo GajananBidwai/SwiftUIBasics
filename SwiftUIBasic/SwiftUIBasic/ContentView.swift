@@ -34,19 +34,19 @@ struct ContentView: View {
         VStack {
             
 //            Print Date and time
-            Text(date.formatted(date: .abbreviated, time: .omitted))
+//            Text(date.formatted(date: .abbreviated, time: .omitted))
             
 //            print currency in US Doller form as per code
-            Text(currency.formatted(.currency(code: "USD")))
+//            Text(currency.formatted(.currency(code: "USD")))
             
 //            print timer countdown
-            Text(date, style: .timer)
+//            Text(date, style: .timer)
             
-            Text("Check Font")
-                .font(Font.custom("ChristmasMarketRegular", fixedSize: 100))
+//            Text("Check Font")
+//                .font(Font.custom("ChristmasMarketRegular", fixedSize: 100))
                 
 //            Nested Text
-            Text("Hello \(Text("World").underline().font(.title))").font(.title)
+//            Text("Hello \(Text("World").underline().font(.title))").font(.title)
             
 //            All the modifers at one text view
 //            Text("Hello World")
@@ -176,11 +176,11 @@ struct ContentView: View {
 //            getView()
             
 //            Environment
-            Image(systemName: "trash")
-                .resizable()
-                .frame(width: 50, height: 50, alignment: .center)
-                .foregroundStyle(mode == .dark ? .white : .black)
-                .symbolVariant(mode == .dark ? .circle : .fill)
+//            Image(systemName: "trash")
+//                .resizable()
+//                .frame(width: 50, height: 50, alignment: .center)
+//                .foregroundStyle(mode == .dark ? .white : .black)
+//                .symbolVariant(mode == .dark ? .circle : .fill)
             
 //            Grid{
 //                Group{
@@ -271,7 +271,19 @@ struct ContentView: View {
 //            }.background(.yellow)
 //
 //        }
-        
+        List {
+            Section(header: Text("Profile")) {
+                Text("Name")
+                Text("Email")
+            }
+            
+            Section(header: Text("Preferences")) {
+                Toggle("Dark Mode", isOn: .constant(true))
+                Toggle("Notifications", isOn: .constant(false))
+            }
+        }
+        .listStyle(.insetGrouped)
+        .navigationTitle("Settings")
     
        
     }
