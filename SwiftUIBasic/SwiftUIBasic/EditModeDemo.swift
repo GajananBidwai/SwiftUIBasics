@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditMode: View {
+struct EditModeDemo: View {
     @State private var fruits = ["Apple", "Banana", "Orange", "Mango"]
 
     var body: some View {
@@ -37,5 +37,5 @@ struct EditMode: View {
 
 
 #Preview {
-    EditMode()
+    EditModeDemo()
 }
