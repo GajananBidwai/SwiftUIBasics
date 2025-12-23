@@ -24,6 +24,9 @@ struct SwipeActionDemo: View {
                         }
                 }
             }
+            .refreshable {
+                print("Loading values")
+            }
             .navigationTitle("Inbox")
         }
     }
